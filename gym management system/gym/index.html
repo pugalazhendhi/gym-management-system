@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"rel="stylesheet"/>
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+        body{
+            background-color: rgb(21, 20, 20);
+            background-image: url("bg image 2.jpg");
+            background-repeat: no-repeat;
+            background-size:  cover;
+            background-position: right center;
+            height:750px;
+        }
+        .header{
+            height: 55px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items:center;
+      }
+        .left-section{
+            width: 150px;
+            height: 50px;
+            margin-left: 200px;
+            cursor: pointer; 
+      }
+        .middle-section{
+            height: 20px;
+            flex: 1;
+            margin-left: 200px;
+            margin-right: 35px; 
+        }
+        .middle-section a{
+            color: white;
+            font-size: 15px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .middle-section a:hover{
+            text-decoration: underline;
+            text-decoration-color: rgb(240, 181, 71);
+            text-decoration-thickness: 2px;
+        }
+        .right-section{
+            width: 250px;  
+        }
+        .gym-logo {
+            height: 90px;
+            width: 100px;
+            border: none;
+            border-radius: 100px;
+            margin-top: 10px;   
+        }
+        ul{
+            list-style-type:none;
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            float: left;
+            margin: 20px;
+        }
+        .join-button{
+           padding-left:25px;
+           padding-right: 25px;
+           padding-top: 10px;
+           padding-bottom: 10px;
+           margin-top: 50px;
+           color: white;
+           background-color: rgb(240, 181, 71);
+           border: none;
+           border-radius: 3px;
+           cursor: pointer;
+           font-weight: bold;
+        }
+        .join-button:hover{
+            opacity: 0.8;
+            transition: opacity 1s;
+        }
+        .intro{
+            color: white;
+            margin-top: 200px;
+            margin-left: 30px;
+            width: 500px;
+        }
+        .fitness{
+            font-size: 15px;
+            color:rgb(240, 181, 71); 
+            margin-left: 74px;
+            margin-top: 250PX;
+        }
+        .body{
+            font-family: arial black;
+            font-weight: bold;
+            font-size: 45px;
+            margin-left: 70px;
+            margin-top: 10px;
+        }
+        .shape{
+            color: rgb(48,48,48);
+            text-shadow: 2px 2px 3px white;        
+        }
+        p{
+            margin-left: 74px;
+            margin-top: -20PX;
+        }
+        .button{
+            margin-left: 74px;
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color: rgb(240, 181, 71);
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .button:hover{
+            opacity: 0.8;
+            transition: opacity 1s;
+        }
+        .program{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+            margin-left: 100px;
+            margin-top: 200px;
+            font-size: 30px;
+            font-weight: bold;
+            font-family: arial;
+        }
+        .arrows{
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-right: 80px;
+        }
+        .arrows span{
+            padding: 0px 6px;
+            font-size: 24px;
+            color: white;
+            border: 2px solid white;
+            border-radius: 100%;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .arrows span:hover{
+            color : rgb(240, 181, 71);
+            border-color: rgb(240, 181, 71);
+        }
+        .explore-card {
+            margin-top: 80px;
+            margin-left: 100px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        .card , .price-plan-content{
+            padding: 2px;
+            margin-right: 40px;
+            background-color: rgba(128, 128, 128, 0.11);
+            border: 2px solid transparent;
+            border-radius: 10px;
+            transition: 0.3s;
+            color: white;
+        }
+        .card a {
+            color: white;
+            text-decoration: none;
+        }
+        .card a:hover{
+            color: rgb(240, 181, 71);
+        }
+        .card:hover , .price-plan-content:hover{
+            background-color: rgba(128, 128, 128, 0.232);
+            border-color: rgb(240, 181, 71);
+        }
+        .card span{
+            display: inline-block;
+            padding: 2px 8px;
+            margin-bottom: 12px;
+            font-size: 25px;
+            color: white;
+            background-color:rgb(240, 181, 71);
+            border-radius: 5px;
+        }
+        .card p{
+            font-size: 18px;
+            font-weight: lighter;
+        }
+        .card h4{
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .class{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+        .class-image{
+            position: relative;
+        }
+        .image1{
+            position: absolute;
+            right: 0;
+            top: 0;
+            max-width: 500px;
+            border-radius: 10px;
+            height: 350px;
+            margin-right: 50px;
+            margin-top: 200px;
+        }
+        .image2{
+            position: absolute;
+            left: 0;
+            top: 200px;
+            max-width: 300px;
+            border-radius: 10px;
+            margin-left: 100px;
+            height: 250px;
+            margin-top: 200px;
+        }
+        .class-content{
+            color: white;
+            margin-top: 200px;
+            margin-right: 250px;
+        }
+        .class-content h4{
+            font-size: 40px;
+        }
+        .btn{
+            margin-left: 70px;
+            margin-top: 30px;
+            color: white;
+            background-color:rgb(240, 181, 71);
+            padding-left:25px;
+            padding-right: 25px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .btn:hover{
+             opacity: 0.8;
+             transition: opacity 1s;
+        }
+        .join-us{
+            color: white;
+            margin-top: 300px;
+            padding-left: 650px;
+            font-weight: bold;
+        }
+        .join-content{
+            color: white;
+            margin-top: 40px;
+            margin-right: 450px;
+            padding-left: 400px;
+            font-size: 20px;  
+        }
+        .join-image{
+            height: 400px;
+            width: 900px;
+            padding-left: 300px;
+            border: none;
+        }    
+        .join-grid{
+            color: white;
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-left: 200px;
+            margin-right: 200px;     
+        }
+        .join-card{      
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background-color: rgb(51, 44, 44);
+            border: none;
+            border-radius: 20px;
+        }
+        .join-card span{
+            background-color: rgb(240, 181, 71);
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+        }
+        .join-card h3{
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 35px;
+        }
+        .join-card p{
+            margin-right: 50px;
+        }
+        .price{
+           color: white;
+           margin-top: 250px;
+           margin-left: 200px;     
+        }
+        .price h2{
+            padding-left: 450px;
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 50px;
+        }
+        .price p{
+            margin-right: 300px;
+            padding-left: 300px;
+            padding-right: 100px;
+            font-family: arial;
+        }
+        .price-grid{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            color: white;
+            gap: 24px;
+            margin-top: 50px;
+        }
+        .price-plan-content{
+            padding: 40px;
+            padding-bottom: 40px;
+            padding-left: 50px;
+        }
+        .amount{
+            font-size: 24px;
+            font-weight: bold;
+            padding-left: 4px;
+        }
+        .horizontal-line{
+            width: 350px;
+            height: 2px;
+            background-color: white;
+            margin-top: 20px;
+        }
+        .price-plan-content p{    
+            margin-top: 30px;
+            font-weight: bold;
+        }
+        .price-plan-content i{
+            color: rgb(240, 181, 71);
+        }
+        .price-button1{
+             color: rgb(240, 181, 71);
+            background-color: rgba(128, 128, 128, 0.11);
+            border-color: rgb(240, 181, 71);
+            padding: 20px;
+            padding-left: 150px;
+            padding-right: 140px;
+            margin-top: 175px;
+            border-radius: 3px;
+        }
+        .price-button2{
+            color:rgb(240, 181, 71);
+            background-color: rgba(128, 128, 128, 0.11);
+            border-color: rgb(240, 181, 71);
+            padding: 20px;
+            margin-top: 130px;
+            padding-left: 150px;
+            padding-right: 140px;
+            border-radius: 3px;
+        }
+        .price-button3{
+            color: rgb(240, 181, 71);
+            background-color: rgba(128, 128, 128, 0.11);
+            border-color: rgb(240, 181, 71);
+            padding: 20px;
+            margin-top: 30px;
+            padding-left: 150px;
+            padding-right: 140px;
+            border-radius: 3px;
+        }
+        .price-button1:hover, .price-button2:hover, .price-button3:hover{
+            background-color: rgb(240, 181, 71);
+            color: white;
+            cursor: pointer;
+        }
+        .review{
+             background-color: rgba(128, 128, 128, 0.11);
+             margin-top: 200px;
+             padding-top: 60px;
+             padding-bottom: 100px;
+             display: flex;     
+        }
+        .review span{
+            color : rgb(240, 181, 71);
+            font-size: 70px;
+            margin-left: 130px;
+            margin-top: 70px;
+        }
+        .review-content h3{
+            color: white;
+            margin-left: 40px;
+            margin-top: 60px;
+            margin-bottom: 30px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .review-content p{
+            color: white;
+            max-width: 800px;   
+            font-size: 17px; 
+            margin-top: 10px;
+            margin-left: 40px;      
+        }
+        .review-rating span{
+            font-size: 15px;
+            margin-left: 35px;  
+        }
+        .review-rating{
+            margin-top: 50px;
+        }
+        .review-member{
+             display: flex;
+             align-items: flex-start;
+        }
+        .rating-image{
+            height: 70px;
+            border-radius: 100px;
+            margin-top: 60px;
+            margin-left: 40px;
+        }
+        .reviews{
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+        .rating-arrows span{
+            font-size: 30px;
+            margin-left: 40px;
+            cursor: pointer;      
+         } 
+         .final{
+            height: 100px;
+            margin-left: 200px;
+            margin-top: 100px;
+            width: 90px;
+            border: none;
+            border-radius: 100%;
+         }
+         .content{
+            color: white;
+            margin-top:40px;
+            margin-left: 200px;
+            width: 350px;
+         }
+        .last-page{
+            display: flex;
+            padding: 30px;
+        }
+        .social-media{
+            margin-left: 200px;
+            margin-top: 50px;
+        }
+        .social-media a{
+            padding: 5px 10px;
+            font-size: 1.25rem;
+            color: rgb(240, 181, 71);
+            text-decoration: none;
+            border: 1px solid rgb(240, 181, 71);
+            border-radius: 100%;
+            transition: 0.3s;
+         }
+         .social-media a:hover{
+            color: white;
+            background-color: rgb(240, 181, 71);
+         }
+         .conclusion{
+            margin-top: 30px;
+            padding: 80px;
+         }
+         .conclusion h4{
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+         }
+         .conclusion a{
+            display: block;
+            margin-bottom: 1rem;
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;       
+         }
+         .conclusion a:hover{
+            color:rgb(240, 181, 71);
+         }
+
+         .modal {
+                display: none;
+                position: fixed;
+                z-index: 1000;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0, 0, 0, 0.6);
+            }
+
+       .modal-content {
+        background-color: #1c1c1c;
+        margin: 10% auto;
+        padding: 20px;
+        border-radius: 10px;
+        width: 60%;
+        color: white;
+        border: 2px solid rgb(240, 181, 71);
+        }
+
+        .close-btn {
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        color: rgb(240, 181, 71);
+        }
+
+
+
+    </style>
+    <title>Gym Management System</title>
+</head>
+<body>
+    <div class="header">
+        <div class="left-section">
+            <img class="gym-logo" src="gym logo.jpg">
+        </div>
+        <div class="middle-section">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#program">Program</a></li>
+                <li><a href="#service">Service</a></li>
+                <li><a href="#about">About</a></li>
+                 <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#community">Community</a></li>    
+            </ul>
+        </div>
+        <div class="right-section">
+            <button class="join-button">Join Now</button>
+        </div>
+    </div>
+    <div id="home" class="intro">
+        
+            <h1 class="fitness">BEST FITNESS IN THE TOWN</h1>
+            <h2 class="body"><span class="shape">MAKE</span> YOUR BODY SHAPE</h2>
+            <p>
+                Embarking on a gym journey to become stronger involves setting clear goals, creating a suitable workout plan, and gradually increasing intensity and duration. Focus on both strength training and cardiovascular exercises, while incorporating rest days for muscle recovery.
+            </p>
+            <button class="button">Get Started</button>
+        
+    </div>
+    <div id="program" class="program">
+        <h3 class="explore">EXPLORE OUR PROGRAM</h3>
+        <div class="arrows">
+            <span><i class="ri-arrow-left-line"></i></span>
+            <span><i class="ri-arrow-right-line"></i></span>
+        </div>
+    </div>
+    <div class="explore-card">
+    <div class="card">
+        <span><i class="ri-boxing-fill"></i></span>
+        <h4>Strength</h4>
+        <p>
+             It is built through consistent effort and progressive overload, challenging your muscles to adapt and grow stronger. 
+        </p>
+        <a href="#">Join Now <i class="ri-arrow-right-line"></i></a>
+    </div>
+
+    <div class="card">
+        <span><i class="ri-heart-pulse-fill"></i></span>
+        <h4>Physical Fitness</h4>
+        <p>
+             It involves improving one's overall health and physical capabilities through structured exercise and training
+        </p>
+        <a href="#">Join Now <i class="ri-arrow-right-line"></i></a>
+    </div>
+
+    <div class="card">
+        <span><i class="ri-run-fill"></i></span>
+        <h4>Fat loss</h4>
+        <p>
+             It focus on cardiovascular exercise to burn calories and strength training to build muscle mass. we'll empower you to reach your goals
+        </p>
+        <a href="#">Join Now <i class="ri-arrow-right-line"></i></a>
+    </div>
+
+    <div class="card">
+        <span><i class="ri-shopping-basket-fill"></i></span>
+        <h4>Weight Gain</h4>
+        <p>
+             Designed for individuals, our program offers an effeective approach to gaining weight in a sustainable manner.
+        </p>
+        <a href="#">Join Now <i class="ri-arrow-right-line"></i></a>
+    </div>
+    </div>
+    <div id="service" class="class">
+        <div class="class-image">
+            <img src="class-image1.jpg" alt="class" class="image1">
+            <img src="class-image2.jpg" alt="class" class="image2">
+        </div>
+        <div class="class-content">
+            <h4>THE CLASS YOU WILL GET HERE</h4>
+            <p>
+                Led by our team of expert and motivational instructors, "The Class You Will Get Here" is a high-energy, results-driven session that combines a perfect blend of cardio, strength training, and functional excersises. Each class is carefully curated to keep you engaged and challenged, ensuring you never hit a palteau in your fitness endeavors.
+            </p>
+            <button class="btn">Book A Class</button>
+        </div>
+    </div>
+    <div id="about" class="join-container">
+        <h2 class="join-us">WHY JOIN US ?</h2>
+        <p class="join-content">
+            Our diverse membership base creates a friendly and supportive atmoshphere, where you can make friends and stay motivated.
+        </p>
+    </div>
+
+    <div class="join">
+        <img src="join img.jpg" alt="join"class=join-image>
+        <div class="join-grid">
+            <div class="join-card">
+                <span><i class="ri-user-star-fill"></i></span>
+                <div class="join-card-content">
+                    <h3>Personal Trainer</h3>
+                    <p>Unlock your potential with our expert Personal Trainers.</p>
+                </div>
+            </div>
+             <div class="join-card">
+                <span><i class="ri-vidicon-fill"></i></span>
+                <div class="join-card-content">
+                    <h3>Practice Sessions</h3>
+                    <p>Elevate your fitness with practice sessions.</p>
+                </div>
+            </div>
+             <div class="join-card">
+                <span><i class="ri-building-line"></i></span>
+                <div class="join-card-content">
+                    <h3>Good Management</h3>
+                    <p>Supportive management, for your fitness success.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="pricing" class="price">
+        <h2 class="price-plan">OUR PRICING PLAN</h2>
+        <p>
+            Our pricing plan comes with various membership tiers, each tailored to cater to different preferences and fitness aspirations
+        </p>
+    </div>
+    <div class="price-grid">
+        <div class="price-plan-content">
+            <h3>Basic Plan</h3>
+            <h4 class="amount">$16</h4>
+            <div class="horizontal-line"></div>
+            <p>
+                <i class="ri-checkbox-circle-line"></i>
+                Smart workout plan
+            </p>
+            <p>
+                <i class="ri-checkbox-circle-line"></i>
+                At home workouts
+            </p>
+            <button class="price-button1">Join Now</button>
+        </div>
+       
+         <div class="price-plan-content">
+            <h3>Weekly Plan</h3>
+            <h4 class="amount">$25</h4>
+            <div class="horizontal-line"></div>
+            <p>
+                <i class="ri-checkbox-circle-line"></i>
+                Pro Gyms
+            </p>
+            <p>
+                <i class="ri-checkbox-circle-line"></i>
+                Smart workout plan
+            </p>
+            <p>
+                <i class="ri-checkbox-circle-line"></i>
+                At home workouts
+            </p>
+            <button class="price-button2">Join Now</button>
+        </div>
+        
+         <div class="price-plan-content">
+            <h3>Monthly Plan</h3>
+            <h4 class="amount">$45</h4>
+            <div class="horizontal-line"></div>
+            <p>
+                <i class="ri-checkbox-circle-line"></i>
+                ELITE Gyms & Classes
+            </p>
+            <p>
+                <i class="ri-checkbox-circle-line"></i>
+                Pro Gyms
+            </p>
+            <p>
+                <i class="ri-checkbox-circle-line"></i>
+                Smart workout plan
+            </p>
+            <p>
+                <i class="ri-checkbox-circle-line"></i>
+                At home workouts
+            </p>
+            <p>
+                <i class="ri-checkbox-circle-line"></i>
+                Personal Training
+            </p>
+            <button class="price-button3">Join Now</button>
+        </div>
+    </div>
+
+    <div  id="community"class="review">
+        <span><i class="ri-double-quotes-r"></i></span>
+        <div class="review-content">
+            <h3>MEMBER REVIEW</h3>
+            <p> 
+                "The gym has state-of-the-art equipment, knowledgeable trainers, and a supportive atmosphere that motivates me to reach my fitness goals." "Clean and spacious facility, friendly staff, and a wide range of classes make this gym my go-to for a great workout experience.
+            </p>
+            <div class="review-rating">
+                <span><i class="ri-star-fill"></i></span>
+                <span><i class="ri-star-fill"></i></span>
+                <span><i class="ri-star-fill"></i></span>
+                <span><i class="ri-star-fill"></i></span>
+                <span><i class="ri-star-half-fill"></i></span>
+            </div>
+            <div class="reviews">
+            <div class="review-member">
+                <img src="review-img.jpg" alt="member" class="rating-image">
+                <div class="member-details">
+                    <h3>Joe Root</h3>
+                    <p>Cricket Player</p>
+                </div>
+                </div>
+                <div class="rating-arrows">
+                    <span><i class="ri-arrow-left-line"></i></span>
+                    <span><i class="ri-arrow-right-line"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-container">
+    <div class="last-page">
+    <div class="final-logo">
+        <img src="gym logo.jpg" alt="logo" class="final">
+        <p class="content">
+            Take the first step towards a healthier , stronger you with our unbeatable pricing plans. Let's sweat, achieve, and conquer together!  
+        </p>
+        
+        <div class="social-media">
+            <a href="#"><i class="ri-facebook-fill"></i></a>
+            <a href="#"><i class="ri-instagram-fill"></i></a>
+            <a href="#"><i class="ri-twitter-fill"></i></a>
+        </div>
+    </div>  
+
+    <div class="conclusion">
+        <h4>Company</h4>
+        <a href="#">Business</a>
+        <a href="#">Franchise</a>
+        <a href="#">Partnership</a>
+        <a href="#">Network</a>
+    </div>
+    <div class="conclusion">
+        <h4>About us</h4>
+        <a href="#">Blogs</a>
+        <a href="#">Security</a>
+        <a href="#">Careers</a>
+    </div>
+     <div class="conclusion">
+        <h4>Contact</h4>
+        <a href="#">Contact us</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">BMI Calculator</a>
+    </div>
+     </div>
+    </div>
+
+
+    <!-- Modal / Popup -->
+<div id="programModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2 id="modalTitle">Program Details</h2>
+    <p id="modalDescription">Details about the selected program will appear here.</p>
+  </div>
+</div>
+
+    <script>
+  // Smooth scroll for navigation links
+  document.querySelectorAll('.middle-section a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const sectionId = this.getAttribute('href').slice(1);
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Explore Program arrows navigation (simulated scroll)
+  const cardsContainer = document.querySelector('.explore-card');
+  const leftArrow = document.querySelector('.ri-arrow-left-line');
+  const rightArrow = document.querySelector('.ri-arrow-right-line');
+
+  rightArrow.addEventListener('click', () => {
+    cardsContainer.scrollBy({ left: 300, behavior: 'smooth' });
+  });
+
+  leftArrow.addEventListener('click', () => {
+    cardsContainer.scrollBy({ left: -300, behavior: 'smooth' });
+  });
+
+  // Join Now buttons in price plan - show alert (for demo)
+  document.querySelectorAll('.price-plan-content button').forEach(button => {
+    button.addEventListener('click', () => {
+      alert('Thanks for choosing a plan! We will contact you shortly.');
+    });
+  });
+
+  // Join Now top button scrolls to price section
+  document.querySelector('.join-button').addEventListener('click', () => {
+    const priceSection = document.querySelector('.price');
+    if (priceSection) {
+      priceSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+
+  // Get Started button scrolls to program section
+  document.querySelector('.button').addEventListener('click', () => {
+    const programSection = document.querySelector('.program');
+    if (programSection) {
+      programSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+
+
+
+  const modal = document.getElementById("programModal");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalDescription = document.getElementById("modalDescription");
+  const closeBtn = document.querySelector(".close-btn");
+
+  // Program Info
+  const programDetails = {
+    strength: {
+      title: "Strength Program",
+      description: "Boost your muscular power and endurance with tailored strength training plans."
+    },
+    fitness: {
+      title: "Physical Fitness",
+      description: "Improve your overall health and stamina through customized fitness routines."
+    },
+    fatloss: {
+      title: "Fat Loss Program",
+      description: "Burn calories efficiently and get leaner with our expert-guided fat loss routines."
+    },
+    weightgain: {
+      title: "Weight Gain Program",
+      description: "Gain healthy weight with nutrient strategies and muscle-building workouts."
+    }
+  };
+
+  // Show Modal
+  function showModal(programKey) {
+    modalTitle.textContent = programDetails[programKey].title;
+    modalDescription.textContent = programDetails[programKey].description;
+    modal.style.display = "block";
+  }
+
+  // Close Modal
+  closeBtn.onclick = () => {
+    modal.style.display = "none";
+  };
+
+  // Close when clicking outside the box
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+
+  // Add event listeners to Join Now buttons
+  document.querySelectorAll(".explore-card .card").forEach((card, index) => {
+    card.querySelector("a").addEventListener("click", (e) => {
+      e.preventDefault();
+      const keys = ["strength", "fitness", "fatloss", "weightgain"];
+      showModal(keys[index]);
+    });
+  });
+
+
+</script>
+
+</body>
+</html>
